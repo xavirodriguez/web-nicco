@@ -1,0 +1,144 @@
+[
+  {
+    "id": "107365742",
+    "url": "https://www.bandsintown.com/e/107365742?app_id=cc4feb14a45c9d812f446e0b7b22a541&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "datetime": "2025-09-18T17:30:00",
+    "title": "Santo Groove",
+    "description": "One Thursday a month, Santo Palato offers you the grooviest and holiest aperitif in Prague ",
+    "artist": {
+      "id": "15534799",
+      "name": "Nicco Lupen",
+      "url": "https://www.bandsintown.com/a/15534799?came_from=267&app_id=cc4feb14a45c9d812f446e0b7b22a541",
+      "mbid": "",
+      "options": { "display_listen_unit": false },
+      "tracking": [],
+      "image_url": "https://photos.bandsintown.com/large/22529129.jpeg",
+      "thumb_url": "https://photos.bandsintown.com/thumb/22529129.jpeg",
+      "facebook_page_url": "",
+      "tracker_count": 64,
+      "upcoming_event_count": 3,
+      "support_url": "",
+      "links": [
+        { "type": "website", "url": "https://lnk.bio/niccolupen" },
+        { "type": "youtube", "url": "https://www.youtube.com/@niccolupen" },
+        { "type": "instagram", "url": "https://www.instagram.com/niccolupen" },
+        {
+          "type": "spotify",
+          "url": "https://open.spotify.com/artist/5EJzfRqsmxGlhKPuoSmDLU"
+        },
+        { "type": "bandcamp", "url": "https://niccolupen.bandcamp.com" },
+        {
+          "type": "amazon",
+          "url": "https://music.amazon.com/artists/B08FFX26CF"
+        },
+        { "type": "soundcloud", "url": "https://soundcloud.com/niccolupen" },
+        {
+          "type": "itunes",
+          "url": "https://music.apple.com/it/artist/nicco-lupen/1526913971"
+        },
+        { "type": "facebook", "url": "https://www.facebook.com/niccolupen" },
+        {
+          "type": "shazam",
+          "url": "https://www.shazam.com/artist/-/1526913971"
+        }
+      ],
+      "artist_optin_show_phone_number": false,
+      "show_multi_ticket": true
+    },
+    "venue": {
+      "location": "Hlavní město Praha, Czechia",
+      "name": "Santo Groove",
+      "latitude": "50.08333",
+      "longitude": "14.46667",
+      "street_address": "Sokolovská 65/26",
+      "postal_code": "186 00",
+      "city": "Hlavní Město Praha",
+      "country": "Czechia",
+      "region": ""
+    },
+    "lineup": ["Nicco Lupen"],
+    "offers": [],
+    "free": true,
+    "artist_id": "15534799",
+    "on_sale_datetime": "",
+    "festival_start_date": "",
+    "festival_end_date": "",
+    "festival_datetime_display_rule": "",
+    "starts_at": "2025-09-18T17:30:00",
+    "ends_at": "2025-09-18T21:00:00",
+    "datetime_display_rule": "datetime",
+    "bandsintown_plus": false,
+    "presale": "",
+    "sold_out": false
+  },
+  {
+    "id": "107365745",
+    "url": "https://www.bandsintown.com/e/107365745?app_id=cc4feb14a45c9d812f446e0b7b22a541&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "datetime": "2025-09-21T22:30:00",
+    "title": "",
+    "description": "",
+    "venue": {
+      "location": "Hlavní město Praha, Czechia",
+      "name": "Vzorkovna",
+      "latitude": "50.0817323",
+      "longitude": "14.4159294",
+      "street_address": "Národní 339/11",
+      "postal_code": "110 00",
+      "city": "Hlavní Město Praha",
+      "country": "Czechia",
+      "region": ""
+    },
+    "lineup": ["Nicco Lupen"],
+    "offers": [
+      {
+        "status": "available",
+        "type": "Free",
+        "url": "https://www.bandsintown.com/t/107365745?app_id=cc4feb14a45c9d812f446e0b7b22a541&came_from=267&custom=true&utm_medium=api&utm_source=public_api&utm_campaign=ticket"
+      }
+    ],
+    "free": true,
+    "artist_id": "15534799",
+    "on_sale_datetime": "",
+    "festival_start_date": "",
+    "festival_end_date": "",
+    "festival_datetime_display_rule": "",
+    "starts_at": "2025-09-21T22:30:00",
+    "ends_at": "2025-09-22T04:00:00",
+    "datetime_display_rule": "range",
+    "bandsintown_plus": false,
+    "presale": "",
+    "sold_out": false
+  },
+  {
+    "id": "107365748",
+    "url": "https://www.bandsintown.com/e/107365748?app_id=cc4feb14a45c9d812f446e0b7b22a541&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=event",
+    "datetime": "2025-09-27T19:00:00",
+    "title": "Aperidisco",
+    "description": "EN\nThe APERIDISCO is back with all its funky disco vibes! Rather you want to warm up for a party or you\u2019d like to spend a cool Saturday afternoon, APERIDISCO is the party for you!\nIn the same place you will get great music, nice food and proper Italian aperitif cocktails! All surrounded by lovely people\u2026 what do you want more?\nSee you on the funkiest Saturday of the month!\n🇨🇿\nAPERIDISCO je zpět se všemi svými funky disco vibracemi! Spíše se chcete zahřát na párty nebo chcete strávit chladné sobotní odpoledne, APERIDISCO je párty pro vás!\nNa stejném místě dostanete skvělou hudbu, dobré jídlo a pořádné italské aperitivové koktejly! Vše obklopeno krásnými lidmi... co si přát víc?\nNa viděnou v nejzábavnější sobotu v měsíci!\n🇮🇹\nAPERIDISCO è tornato con tutte le sue vibrazioni funky disco! Che tu voglia riscaldarti per una festa o trascorrere un fresco sabato pomeriggio, l'APERIDISCO è la festa che fa per te!\nNello stesso posto troverai ottima musica, buon cibo e veri cocktail da aperitivo italiano! Il tutto circondato da persone adorabili... cosa vuoi di più?\nCi vediamo il sabato più funky del mese!",
+    "venue": {
+      "location": "Hlavní město Praha, Czechia",
+      "name": "Aperidisco",
+      "latitude": "50.0765979",
+      "longitude": "14.4162934",
+      "street_address": "Záhořanského 2007",
+      "postal_code": "120 00",
+      "city": "Hlavní Město Praha",
+      "country": "Czechia",
+      "region": ""
+    },
+    "lineup": ["Nicco Lupen"],
+    "offers": [],
+    "free": true,
+    "artist_id": "15534799",
+    "on_sale_datetime": "",
+    "festival_start_date": "",
+    "festival_end_date": "",
+    "festival_datetime_display_rule": "",
+    "starts_at": "2025-09-27T19:00:00",
+    "ends_at": "2025-09-27T22:00:00",
+    "datetime_display_rule": "datetime",
+    "bandsintown_plus": false,
+    "presale": "",
+    "sold_out": false
+  }
+]

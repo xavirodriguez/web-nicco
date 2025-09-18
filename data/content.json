@@ -1,0 +1,93 @@
+{
+  "hero": {
+    "title": "Nicco Lupen",
+    "tagline": "Electronic Music Producer & Live Performer",
+    "description": "House & Tech House DJ in Prague. Crafting immersive parties that move bodies and souls across dance floors worldwide.",
+    "ctaText": "Book Now",
+    "ctaLink": "#contact",
+    "backgroundVideo": "/nicco_hero.png?height=1080&width=1920"
+  },
+  "about": {
+    "title": "Nicco Lupen",
+    "description": " Nicco Lupen is an Italian DJ and producer based in Prague, specialized in house and tech house music. \n His jurney started at the age of 7 with keyboards, later playing bass in punk and nu metal bands in Milan . \n In 2008 he moved to Barcelona, joining Luv Messenger sound, before fully embracing electronic music. \n Today, Nicco Lupen blends house grooves with deep, funky vibes, performing across Europe. ",
+    "image": "/placeholder.svg?height=600&width=400",
+    "stats": [
+      { "label": "Years Experience", "value": "12+" },
+      { "label": "Countries Performed", "value": "25+" },
+      { "label": "Tracks Released", "value": "150+" },
+      { "label": "Festival Appearances", "value": "50+" }
+    ]
+  },
+  "media": {
+    "title": "Latest Tracks & Mixes",
+    "soundcloud": {
+      "embedUrl": "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1969939720&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user={:soundcloud_user}&amp;show_reposts=false&amp;show_teaser=true&amp;visual=",
+      "title": "Latest Mix Series"
+    },
+    "spotify": {
+      "embedUrl": "https://open.spotify.com/embed/playlist/37i9dQZF1E4vKEWWnQ20ed?utm_source=generator&theme=0",
+      "title": "Essential Tracks Playlist"
+    },
+    "youtube": {
+      "embedUrl": "https://www.youtube.com/watch?v=8mMzy8ZTdGE",
+      "title": "Live Performance at at Back Doors - Prague"
+    }
+  },
+  "events": [
+    {
+      "id": 1,
+      "title": "Warehouse Festival 2024",
+      "date": "2024-12-15",
+      "time": "22:00",
+      "venue": "Industrial Complex",
+      "city": "Berlin",
+      "country": "Germany",
+      "ticketUrl": "https://example.com/tickets/1",
+      "image": "/placeholder.svg?height=300&width=400",
+      "status": "upcoming"
+    },
+    {
+      "id": 2,
+      "title": "Neon Nights",
+      "date": "2024-12-22",
+      "time": "23:30",
+      "venue": "Club Voltage",
+      "city": "Amsterdam",
+      "country": "Netherlands",
+      "ticketUrl": "https://example.com/tickets/2",
+      "image": "/placeholder.svg?height=300&width=400",
+      "status": "upcoming"
+    },
+    {
+      "id": 3,
+      "title": "New Year's Eve Special",
+      "date": "2024-12-31",
+      "time": "23:00",
+      "venue": "Rooftop Terrace",
+      "city": "Barcelona",
+      "country": "Spain",
+      "ticketUrl": "https://example.com/tickets/3",
+      "image": "/placeholder.svg?height=300&width=400",
+      "status": "upcoming"
+    }
+  ],
+  "contact": {
+    "title": "Get In Touch",
+    "description": "Ready to bring unforgettable energy to your event? Let's create something amazing together.",
+    "email": "booking@niccolupen.com",
+    "phone": "+1 (555) 123-4567",
+    "social": {
+      "instagram": "https://www.instagram.com/niccolupen",
+      "facebook": "https://www.facebook.com/niccolupen",
+      "spotify": "https://open.spotify.com/artist/alexnova",
+      "youtube": "https://youtube.com/@alexnova",
+      "twitter": "https://twitter.com/djalexnova"
+    }
+  },
+  "seo": {
+    "title": "Nicco Lupen - Electronic Music Producer & Live Performer",
+    "description": "Professional DJ and electronic music producer. Book Nicco Lupen for festivals, clubs, and private events. Latest tracks, mixes, and upcoming shows.",
+    "keywords": "DJ, electronic music, techno, house, live performance, music producer, festival DJ, club DJ",
+    "ogImage": "/placeholder.svg?height=630&width=1200"
+  }
+}
