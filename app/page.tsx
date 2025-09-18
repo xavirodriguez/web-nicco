@@ -5,24 +5,14 @@ import { MediaSection } from "@/components/media-section";
 import { EventsSection } from "@/components/events-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
-import { EventsSection2 } from "@/components/events-section2";
+
 import eventsData from "@/data/shows.json";
+import { getEvents } from "@/lib/events";
 
-async function getData() {
-  const apiUrl = process.env.BANDSINTOWN_URL;
-
-  if (!apiUrl) {
-    throw new Error("BANDSINTOWN_URL no configurada");
-  }
-
-  const res = await fetch(apiUrl, {
-    next: { revalidate: 3600 }, // 1 hora en segundos
-  });
-  return res.json();
-}
+export const revalidate = 3600;
 
 export default async function Home() {
-  const data = await getData();
+  const data = await getEvents();
   console.log("NODE_ENV:", process.env.NODE_ENV);
   console.log("API_URL exists:", !!process.env.API_URL);
   console.log(
