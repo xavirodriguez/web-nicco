@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import content from "@/data/content.json";
+import { YouTubeEmbed } from "@next/third-parties/google";
 
 export function MediaSection() {
   const { media } = content;
@@ -68,9 +69,6 @@ export function MediaSection() {
                 <iframe
                   src={media.spotify.embedUrl}
                   width="100%"
-                  height="352"
-                  frameBorder="0"
-                  allowTransparency={true}
                   allow="encrypted-media"
                   className="rounded-lg"
                 />
@@ -91,16 +89,7 @@ export function MediaSection() {
                 <CardTitle className="text-xl">{media.youtube.title}</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="aspect-video">
-                  <iframe
-                    src={media.youtube.embedUrl}
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="w-full h-full rounded-lg"
-                  />
-                </div>
+                <YouTubeEmbed videoid="8mMzy8ZTdGE" />
               </CardContent>
             </Card>
           </motion.div>

@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import { EventDescription } from "./event-description";
-import { Description } from "./description";
 
 // Tipos exactos para los datos de Bands in Town
 interface BandsInTownArtist {
@@ -99,7 +98,18 @@ export function EventsSection({ data }: EventsSectionProps) {
     if (event.lineup.length > 0) return `${event.lineup[0]} Live`;
     return "Evento Musical";
   };
-
+  const getMap = (event: BandsInTownEvent) => {
+    const { venue } = event;
+    return (
+      <a
+        href={`https://maps.google.com/?q=${venue.latitude},${venue.longitude}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Map
+      </a>
+    );
+  };
   const getLocation = (event: BandsInTownEvent) => {
     const { venue } = event;
 
@@ -112,13 +122,6 @@ export function EventsSection({ data }: EventsSectionProps) {
           <span itemProp="addressLocality">{venue.city}</span>,
           <span itemProp="addressCountry">{venue.country}</span>
         </address>
-        <a
-          href={`https://maps.google.com/?q=${venue.latitude},${venue.longitude}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Map
-        </a>
       </span>
     );
   };
@@ -183,11 +186,13 @@ export function EventsSection({ data }: EventsSectionProps) {
                 </div>
 
                 {/* Ubicación */}
-                <div className="col-span-2 sm:col-span-2">
-                  {getLocation(event)}
+                <div className="col-span-3 sm:col-span-2">
+                  <div className="font-medium">{getLocation(event)}</div>
+
+                  <div className="text-gray-400 text-sm">{getMap(event)}</div>
                 </div>
 
-                <div className="col-span-6 sm:col-span-2">
+                <div className="col-span-5 sm:col-span-2">
                   <div className="text-gray-400 text-sm">
                     <EventDescription text={event.description} />
                   </div>

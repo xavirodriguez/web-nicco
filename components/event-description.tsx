@@ -8,6 +8,7 @@ export const EventDescription = ({ text }: { text: string }) => {
   return (
     <div>
       <span
+        onClick={() => setExpanded(!expanded)}
         className={
           expanded
             ? "" // sin límite → texto completo
@@ -16,14 +17,6 @@ export const EventDescription = ({ text }: { text: string }) => {
       >
         {text}
       </span>
-      <button
-        type="button"
-        aria-expanded={expanded}
-        onClick={() => setExpanded(!expanded)}
-        className="text-cyan-400 text-xs mt-1 hover:underline"
-      >
-        {expanded ? "-" : "+"}
-      </button>
     </div>
   );
 };
