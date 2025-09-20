@@ -4,13 +4,14 @@
 import { NextResponse } from 'next/server';
 
 const SOUNDCLOUD_CLIENT_ID = process.env.SOUNDCLOUD_CLIENT_ID;
-const NICCOLUPEN_SOUNDCLOUD_ID = 'tu_id_de_usuario_soundcloud'; // Asegúrate de obtener el ID numérico
+const NICCOLUPEN_SOUNDCLOUD_ID = '4032579'; // Asegúrate de obtener el ID numérico
 
 export default async function handler(req, res) { // Para Pages Router
 // export async function GET(request: Request) { // Para App Router
   try {
     const response = await fetch(`https://api-v2.soundcloud.com/users/${NICCOLUPEN_SOUNDCLOUD_ID}/tracks?client_id=${SOUNDCLOUD_CLIENT_ID}&limit=10`);
-
+    //SOUNDCLOUD_CLIENT_ID=ENIB21oehdfYLToaOgt2Z2b9BVfR2kdH
+//SOUNDCLOUD_CLIENT_SECRET=80SeaVCL6InznKry2J3JkSxfv4UBgMch
     if (!response.ok) {
       throw new Error('Failed to fetch tracks from SoundCloud');
     }

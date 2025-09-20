@@ -33,8 +33,13 @@ export interface Artist {
     artists: Artist[];
     is_playable: boolean;
   }
+  export interface TrackSoundcloud {
+    title: string;
+    id: number | null | undefined;
+    permalink_url: string;
+  }
   
-  export interface Track {
+  export interface TrackSpotify {
     album: Album;
     artists: Artist[];
     available_markets: string[];
