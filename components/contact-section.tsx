@@ -4,17 +4,31 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, Instagram, Music, Youtube, Twitter } from "lucide-react";
+import { ResidentAdvisorIcon } from "@/components/icons/ResidentAdvisorIcon";
+import { BeatPortIcon } from "./icons/BeatPortIcon";
+import {
+  FaInstagram,
+  FaFacebook,
+  FaSpotify,
+  FaYoutube,
+  FaSoundcloud,
+  FaBandcamp,
+} from "react-icons/fa";
+
 import content from "@/data/content.json";
 
 export function ContactSection() {
   const { contact } = content;
 
   const socialIcons = {
-    instagram: Instagram,
-    soundcloud: Music,
-    spotify: Music,
-    youtube: Youtube,
-    twitter: Twitter,
+    instagram: FaInstagram,
+    facebook: FaFacebook,
+    soundcloud: FaSoundcloud,
+    spotify: FaSpotify,
+    youtube: FaYoutube,
+    bandcamp: FaBandcamp,
+    resident: ResidentAdvisorIcon,
+    beatport: BeatPortIcon,
   };
 
   return (
@@ -79,9 +93,9 @@ export function ContactSection() {
               <CardContent className="p-6">
                 <h3 className="font-semibold mb-4">Follow Me</h3>
                 <div className="grid grid-cols-2 gap-4">
-                  {/* }
                   {Object.entries(contact.social).map(([platform, url]) => {
-                    const Icon = socialIcons[platform as keyof typeof socialIcons]
+                    const Icon =
+                      socialIcons[platform as keyof typeof socialIcons];
                     return (
                       <Button
                         key={platform}
@@ -95,60 +109,9 @@ export function ContactSection() {
                           {platform.charAt(0).toUpperCase() + platform.slice(1)}
                         </a>
                       </Button>
-                    )
+                    );
                   })}
-                */}
                 </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          {/* Booking Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <Card className="bg-card border-border">
-              <CardContent className="p-6">
-                <h3 className="font-semibold mb-4">Quick Booking Inquiry</h3>
-                <form className="space-y-4">
-                  <div>
-                    <input
-                      type="text"
-                      placeholder="Your Name"
-                      className="w-full p-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring"
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="email"
-                      placeholder="Your Email"
-                      className="w-full p-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring"
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="date"
-                      placeholder="Event Date"
-                      className="w-full p-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring"
-                    />
-                  </div>
-                  <div>
-                    <textarea
-                      placeholder="Tell me about your event..."
-                      rows={4}
-                      className="w-full p-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-ring resize-none"
-                    />
-                  </div>
-                  <Button
-                    type="submit"
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-                  >
-                    Send Inquiry
-                  </Button>
-                </form>
               </CardContent>
             </Card>
           </motion.div>

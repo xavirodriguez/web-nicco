@@ -76,7 +76,6 @@ export function MediaSection() {
             </Card>
           </motion.div>
 
-          {/* YouTube */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -88,7 +87,14 @@ export function MediaSection() {
               <CardHeader>
                 <CardTitle className="text-xl">{media.youtube.title}</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent
+                className="
+               grid grid-cols-3 md:grid-cols-2 sm:grid-cols-1
+               gap-6
+        "
+              >
+                <YouTubeEmbed videoid="KAO9syGw_qs" />
+                <YouTubeEmbed videoid="gv3MkEmbuVA" />
                 <YouTubeEmbed videoid="8mMzy8ZTdGE" />
               </CardContent>
             </Card>

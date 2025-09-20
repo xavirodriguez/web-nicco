@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { NiccoIcon } from "./icons/NiccoIcon";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,15 +35,17 @@ export function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <motion.a
-            href="#"
-            className="font-playfair text-2xl font-bold"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            NICCO LUPEN
-          </motion.a>
+          <div className="flex items-center">
+            <NiccoIcon size={50} />
+            <motion.a
+              href="#"
+              className="pl-2 font-playfair text-2xl font-bold"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              NICCO LUPEN
+            </motion.a>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
