@@ -19,12 +19,31 @@ import SoundcloudTracks from "@/components/soundcloud/SoundcloudTracks";
 export const revalidate = 3600;
 import content from "@/data/content.json";
 
+async function getBandsintownEvents(): Promise<any[]> {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+
+  try {
+    const response = await fetch(`${baseUrl}/api/bandsintown`, {
+      next: { revalidate: 36000 },
+    });
+
+    if (!response.ok) {
+      console.error("Bandsintown API error:", response.status);
+      return [];
+    }
+
+    const events = await response.json();
+    return events;
+  } catch (error) {
+    console.error("Error fetching Bandsintown:", error);
+    return [];
+  }
+}
+
 async function getSoundcloudTracks(): Promise<TrackSoundcloud[]> {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
 
   try {
-    console.log("Fetching from internal API...");
-
     const response = await fetch(`${baseUrl}/api/soundcloud`, {
       next: { revalidate: 86400 }, // Cache 24h en servidor
     });
@@ -40,8 +59,6 @@ async function getSoundcloudTracks(): Promise<TrackSoundcloud[]> {
     }
 
     const tracks: TrackSoundcloud[] = await response.json();
-    console.log(`Tracks recibidos: ${tracks.length}`);
-
     return tracks;
   } catch (error) {
     console.error("Error en getSoundcloudTracks:", error);
@@ -50,9 +67,16 @@ async function getSoundcloudTracks(): Promise<TrackSoundcloud[]> {
 }
 
 export default async function Home() {
-  const data = await getEvents();
-  const tracks: TrackSoundcloud[] = await getSoundcloudTracks(); // Llama a la función de fetching
-  console.log(tracks);
+  //const data = await getEvents();
+  //console.log(data);
+  const [soundcloudTracks, bandsintownEvents] = await Promise.all([
+    getSoundcloudTracks(),
+    getBandsintownEvents(),
+  ]).catch((error) => {
+    console.error("Error fetching data:", error);
+    return [[], []]; // Fallback silencioso
+  });
+
   const featuredTrack: TrackSpotify = tracksData.tracks[0];
   const latestTrack: TrackSpotify = tracksData.tracks.sort(
     (a, b) =>
@@ -63,20 +87,12 @@ export default async function Home() {
     <main className="min-h-screen">
       <Navigation />
       <HeroSection />
-      <EventsSection data={eventsData} />
+      <EventsSection data={bandsintownEvents} />
 
       <HeroTrack track={latestTrack} />
       <AboutSection />
       <MusicSection />
-      <div className="absolute inset-0 z-0">
-        <img
-          src={content.hero.background2 || "/placeholder.svg"}
-          alt="DJ performing"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/60" />
-      </div>
-      <SoundcloudTracks tracks={tracks} />
+      <SoundcloudTracks tracks={soundcloudTracks} />
       <MediaSection />
       <ContactSection />
       <Footer />

@@ -12,7 +12,7 @@ export function HeroSection() {
       {/* Background Video/Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src={hero.backgroundVideo || "/placeholder.svg"}
+          src={hero.backgroundImage || "/placeholder.svg"}
           alt="DJ performing"
           className="w-full h-full object-cover"
         />
