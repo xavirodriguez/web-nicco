@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import content from "@/data/content.json";
 import tracksData from "@/data/tracks.json";
 import TrackCard from "./spotify/TrackCard";
-import { Track } from "@/lib/types";
+import { TrackSpotify } from "@/lib/types";
 
 export function MusicSection() {
   const { media } = content;
@@ -22,7 +22,7 @@ export function MusicSection() {
         gap-6 
         justify-items-center"
         >
-          {tracksData.tracks.map((track: Track) => (
+          {tracksData.tracks.map((track: TrackSpotify) => (
             <TrackCard key={track.id} track={track} />
           ))}
         </div>

@@ -5,7 +5,8 @@
     "description": "House & Tech House DJ in Prague. Crafting immersive parties that move bodies and souls across dance floors worldwide.",
     "ctaText": "Book Now",
     "ctaLink": "#contact",
-    "backgroundVideo": "/nicco_hero.png?height=1080&width=1920"
+    "backgroundVideo": "/nicco_hero.png?height=1080&width=1920",
+    "background2": "/banner1.png?height=1080&width=1920"
   },
   "about": {
     "title": "Nicco Lupen",

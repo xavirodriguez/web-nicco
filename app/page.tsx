@@ -14,45 +14,45 @@ import { TrackSoundcloud, TrackSpotify } from "@/lib/types";
 import TrackCard from "@/components/spotify/TrackCard";
 import TrackListItem from "@/components/spotify/TrackListenItem";
 import { MusicSection } from "@/components/music-section";
+import SoundcloudPlayer from "@/components/soundcloud/SoundcloudPlayer";
+import SoundcloudTracks from "@/components/soundcloud/SoundcloudTracks";
 export const revalidate = 3600;
+import content from "@/data/content.json";
 
 async function getSoundcloudTracks(): Promise<TrackSoundcloud[]> {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+
   try {
-    // Llama a tu propia API Route interna para mayor seguridad
-    // Asegúrate de que NEXT_PUBLIC_BASE_URL esté configurado correctamente en .env.local
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/soundcloud`
-      /*
-      {
-        // Configuración de revalidación para el App Router
-        // Esto le dice a Next.js que revalide estos datos cada 24 horas (86400 segundos)
-        next: { revalidate: 86400 },
-      }*/
-    );
+    console.log("Fetching from internal API...");
+
+    const response = await fetch(`${baseUrl}/api/soundcloud`, {
+      next: { revalidate: 86400 }, // Cache 24h en servidor
+    });
 
     if (!response.ok) {
-      // Si la respuesta no es OK, lanza un error para que el catch lo maneje
       const errorText = await response.text();
-      console.error(
-        "Failed to fetch data from internal API:",
-        response.status,
-        errorText
-      );
-      throw new Error("Failed to fetch data from internal API");
+      console.error("Internal API error:", {
+        status: response.status,
+        statusText: response.statusText,
+        body: errorText,
+      });
+      throw new Error(`Internal API error: ${response.status}`);
     }
 
     const tracks: TrackSoundcloud[] = await response.json();
+    console.log(`Tracks recibidos: ${tracks.length}`);
+
     return tracks;
   } catch (error) {
-    console.error("Error fetching SoundCloud data in Server Component:", error);
-    return []; // Retorna un array vacío en caso de error
+    console.error("Error en getSoundcloudTracks:", error);
+    return []; // Fallback silencioso
   }
 }
 
 export default async function Home() {
   const data = await getEvents();
-  const tracks = await getSoundcloudTracks(); // Llama a la función de fetching
-
+  const tracks: TrackSoundcloud[] = await getSoundcloudTracks(); // Llama a la función de fetching
+  console.log(tracks);
   const featuredTrack: TrackSpotify = tracksData.tracks[0];
   const latestTrack: TrackSpotify = tracksData.tracks.sort(
     (a, b) =>
@@ -62,28 +62,21 @@ export default async function Home() {
   return (
     <main className="min-h-screen">
       <Navigation />
-      {tracks.length > 0 ? (
-        <ul>
-          {tracks.map((track) => (
-            <li key={track.id}>
-              <a
-                href={track.permalink_url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {track.title}
-              </a>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>No se pudieron cargar las pistas de SoundCloud.</p>
-      )}
       <HeroSection />
       <EventsSection data={eventsData} />
+
       <HeroTrack track={latestTrack} />
       <AboutSection />
       <MusicSection />
+      <div className="absolute inset-0 z-0">
+        <img
+          src={content.hero.background2 || "/placeholder.svg"}
+          alt="DJ performing"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/60" />
+      </div>
+      <SoundcloudTracks tracks={tracks} />
       <MediaSection />
       <ContactSection />
       <Footer />

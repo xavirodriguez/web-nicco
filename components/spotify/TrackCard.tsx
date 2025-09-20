@@ -38,12 +38,11 @@ const TrackCard: React.FC<TrackCardProps> = ({ track }) => {
       <h3 className="mb-1.5 text-xl text-brand-complementary font-semibold">
         {track.name}
       </h3>
-      <p className="mb-1.5 text-base text-gray-300">Artista: {artistNames}</p>
       <p className="mb-1.5 text-sm text-gray-400">
-        Álbum: {track.album.name} ({releaseYear})
+        Album: {track.album.name} ({releaseYear})
       </p>
       <p className="mb-4 text-sm text-gray-400">
-        Duración: {formatDuration(track.duration_ms)}
+        Duration: {formatDuration(track.duration_ms)}
       </p>
       <a
         href={track.external_urls.spotify}
@@ -56,7 +55,7 @@ const TrackCard: React.FC<TrackCardProps> = ({ track }) => {
           hover:bg-green-600 transition-colors duration-200
         "
       >
-        Escuchar en Spotify
+        Listen in Spotify
       </a>
     </div>
   );

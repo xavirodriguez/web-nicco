@@ -34,6 +34,8 @@ export interface Artist {
     is_playable: boolean;
   }
   export interface TrackSoundcloud {
+    stream_url: ReactNode;
+    artwork_url: ReactNode;
     title: string;
     id: number | null | undefined;
     permalink_url: string;

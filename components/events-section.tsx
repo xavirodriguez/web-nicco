@@ -127,10 +127,10 @@ export function EventsSection({ data }: EventsSectionProps) {
   };
 
   const getButtonText = (event: BandsInTownEvent) => {
-    if (event.sold_out) return "AGOTADO";
-    if (event.free) return "GRATIS";
-    if (event.offers.length === 0) return "PRÓXIMAMENTE";
-    return "COMPRAR TICKETS";
+    if (event.sold_out) return "SOLD OUT";
+    if (event.free) return "FREE ENTRY";
+    if (event.offers.length === 0) return "COMMING SOON";
+    return "GET TICKETS";
   };
 
   const getButtonVariant = (event: BandsInTownEvent) => {
@@ -157,7 +157,7 @@ export function EventsSection({ data }: EventsSectionProps) {
 
         {events.length === 0 ? (
           <div className="text-center text-gray-400 py-12">
-            No hay eventos próximos programados
+            There are no comming soon shows.
           </div>
         ) : (
           <div className="space-y-0">
@@ -192,14 +192,14 @@ export function EventsSection({ data }: EventsSectionProps) {
                   <div className="text-gray-400 text-sm">{getMap(event)}</div>
                 </div>
 
-                <div className="col-span-5 sm:col-span-2">
+                <div className="col-span-4 sm:col-span-2">
                   <div className="text-gray-400 text-sm">
                     <EventDescription text={event.description} />
                   </div>
                 </div>
 
                 {/* Botón */}
-                <div className="col-span-1 sm:col-span-1 flex justify-end">
+                <div className="col-span-2 sm:col-span-1 flex justify-end">
                   <Button
                     variant={getButtonVariant(event)}
                     size="sm"
